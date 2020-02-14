@@ -64,16 +64,6 @@ class Bot:
         time.sleep(15)
         # reads the list of contacts/groups one by one
         for name in self.name_list:
-            # looks for the contact/group
-            # try:
-            #     # <span dir="auto" title="Amanda Emily ❤" 
-            #     # <span dir="auto" title="PT-Contadora Fernanda Intermaché"
-            #     name = self.driver.find_element_by_xpath(f'//*[@title="{name}"]')
-            # except:
-            #     search_box = self.driver.find_element_by_xpath('/html/body/div[1]/div/div/div[3]/div/div[1]/div/label/input')
-            #     search_box.click()
-            #     search_box.send_keys(f'{name}')
-            #     name = self.driver.find_element_by_xpath(f'//*[@title="{name}"]')
             search_box = self.driver.find_element_by_xpath('/html/body/div[1]/div/div/div[3]/div/div[1]/div/label/input')
             search_box.click()
             search_box.send_keys(f'{name}')
