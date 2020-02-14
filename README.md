@@ -9,6 +9,19 @@ Running the bot it's just as simples as using one of the following commands:
 * `py bot.py`
 * `python bot.py`
 * `python3.6 bot.py`
+
+After running the code, you'll see this screen:
+![Whatsapp Web Login Screen](/README_images/whatsappweb.png)
+Since the moment the code starts running, the program will wait for 15 seconds before star executing comands. So, if it is taking you longer then that to log in WhatsApp Web, try increasing the waiting time.</p>
+When you're in, the bot will start tipping the names where the red arrow is pointing at:
+![Tipping Box](README_images/whatsapp.jpg)
+![alt](README_images/writen.jpg)
+And then types the message and sends it:
+![alt](README_images/typing.jpg)
+![alt](README_images/sent.jpg)
+And then it repeats the process untill the end of the contact list.</p>
+When it gets to the end, the bot logs out of the WhatsApp Web session.
+
 # How Does It Work?
 The program opens the contact file, which in this case is named as `contacts.vcf`, and appends all its lines to a temporary list - `temp_list`.</p>
 Once the contacts file is a *vcf* file, its content format is something like this:
@@ -83,3 +96,7 @@ There is no `FN:` or `FN;`, but there is a `FN_GROUP:`. That tag is for group na
 # Conclusion
 This bot still needs plenty of testing and improvement, and I am oppened to some constructive criticism for sure, and willing to make some modifications to the code based you the community suggestions.</p>
 One little note here: this bot was built to work on Mozilla Firefox, so it'll definitely not work on Google Chrome, or Microsoft Edge, etc. At least for now. Perhaps I can add the adpat version of this bot to those two browsers.</p>
+
+## Bugs
+Still didn't figure out how to fix it, but when the bot looks for a name and it is so large that it won't even been shown entirely, the program fails in fiding the element.</p>
+I might fix this bug in the next few days. For now, avoid large names.
