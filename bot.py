@@ -38,8 +38,8 @@ class Bot:
                     self.encoded_name = ""
                     self.encoded_list = []
                 else:
-                    self.specials_str.append((quopri.decodestring(self.utf_list[-1])).decode('utf-8'))
                     self.utf_list.append(self.temp_list[i].replace("FN;CHARSET=UTF-8;ENCODING=QUOTED-PRINTABLE:", ""))
+                    self.specials_str.append((quopri.decodestring(self.utf_list[-1])).decode('utf-8'))
 
                 for j in range (0, len(self.specials_str[-1])):
                     self.specials_list.append(self.specials_str[-1][j])
@@ -53,7 +53,7 @@ class Bot:
                 self.specials_str = []
                 self.name = ""
                 self.utf_list = []
-                
+
             elif self.temp_list[i].find("FN_GROUP:") == 0:
                 self.name_list.append(self.temp_list[i].replace("FN_GROUP:", ""))
                 self.specials_str.append((quopri.decodestring(self.name_list[-1])).decode('utf-8'))
@@ -65,7 +65,20 @@ class Bot:
         # reads the list of contacts/groups one by one
         for name in self.name_list:
             # looks for the contact/group
+            # try:
+            #     # <span dir="auto" title="Amanda Emily ❤" 
+            #     # <span dir="auto" title="PT-Contadora Fernanda Intermaché"
+            #     name = self.driver.find_element_by_xpath(f'//*[@title="{name}"]')
+            # except:
+            #     search_box = self.driver.find_element_by_xpath('/html/body/div[1]/div/div/div[3]/div/div[1]/div/label/input')
+            #     search_box.click()
+            #     search_box.send_keys(f'{name}')
+            #     name = self.driver.find_element_by_xpath(f'//*[@title="{name}"]')
+            search_box = self.driver.find_element_by_xpath('/html/body/div[1]/div/div/div[3]/div/div[1]/div/label/input')
+            search_box.click()
+            search_box.send_keys(f'{name}')
             name = self.driver.find_element_by_xpath(f'//*[@title="{name}"]')
+            
             # opens the contact/group chat
             name.click()
             time.sleep(1)
@@ -80,7 +93,9 @@ class Bot:
             # looks for the send button 
             send_button = self.driver.find_element_by_xpath('/html/body/div[1]/div/div/div[4]/div/footer/div[1]/div[3]/button')
             # send the message
-            # send_button.click()
+            send_button.click()
+            close_search = self.driver.find_element_by_xpath('/html/body/div[1]/div/div/div[3]/div/div[1]/div/span/button')
+            close_search.click()
             time.sleep(1)
         time.sleep(2)
         # looks for the option button and then the exit button to make the logout
