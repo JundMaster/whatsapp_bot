@@ -78,7 +78,6 @@ class Bot:
             search_box.click()
             search_box.send_keys(f'{name}')
             name = self.driver.find_element_by_xpath(f'//*[@title="{name}"]')
-            
             # opens the contact/group chat
             name.click()
             time.sleep(1)
@@ -94,8 +93,14 @@ class Bot:
             send_button = self.driver.find_element_by_xpath('/html/body/div[1]/div/div/div[4]/div/footer/div[1]/div[3]/button')
             # send the message
             send_button.click()
-            close_search = self.driver.find_element_by_xpath('/html/body/div[1]/div/div/div[3]/div/div[1]/div/span/button')
-            close_search.click()
+            time.sleep(2)
+            # in case the bot doesn't find the button to close the search tab, it should continue
+            # and if the send button is clicked, i'll never find this one
+            try:
+                close_search = self.driver.find_element_by_xpath('/html/body/div[1]/div/div/div[3]/div/div[1]/div/span/button')
+                close_search.click()
+            except:
+                continue
             time.sleep(1)
         time.sleep(2)
         # looks for the option button and then the exit button to make the logout
