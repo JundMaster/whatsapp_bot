@@ -95,7 +95,10 @@ END:VCARD
 There is no `FN:` or `FN;`, but there is a `FN_GROUP:`. That tag is for group names, as you might probably tell right?. And it'll work pretty much like the other tags we've seen before.</p>
 # Conclusion
 This bot still needs plenty of testing and improvement, and I am oppened to some constructive criticism for sure, and willing to make some modifications to the code based you the community suggestions.</p>
+
+This rep has a file named as `contacts.vcf` with an example of the format that the contacts/groups will follow.
 One little note here: this bot was built to work on Mozilla Firefox, so it'll definitely not work on Google Chrome, or Microsoft Edge, etc. At least for now. Perhaps I can add the adpat version of this bot to those two browsers.</p>
+
 
 ## Bugs
 Still didn't figure out how to fix it, but when the bot looks for a name and it is so large that it won't even been shown entirely, the program fails in fiding the element.</p>
