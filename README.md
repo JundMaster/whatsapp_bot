@@ -21,7 +21,35 @@ And then types the message and sends it:
 ![alt](README_images/sent.jpg)
 And then it repeats the process untill the end of the contact list.</p>
 When it gets to the end, the bot logs out of the WhatsApp Web session.
+# Set Things Up Before Get To Work
+In order to use this bot, you'll have to install `selenium` and set the webdrivers up.</p>
+## Installing Selenium
+Use one of the following commands:
+* `pip install selenium`
+* `python -m pip install selenium`
 
+## Setting WebDrivers Up
+### Mozilla Firefox
+If you're using Mozilla Firefox, you'll have to download `geckdriver`. So, click on one of the options bellow and it'll redirect you to the download.</p>
+[`geckodriver-v0.26.0-win32.zip`](https://github.com/mozilla/geckodriver/releases/download/v0.26.0/geckodriver-v0.26.0-win32.zip)</p>
+[`geckodriver-v0.26.0-win64.zip`](geckodriver-v0.26.0-win64.zip)</p>
+After downloading the file, extract it.</p>
+Now, on the command line, type: `mv geckodriver.exe /usr/local/bin`, and in case that one doesn't work, try `mv geckodriver.exe /usr/bin`.</p>
+Now you're all set.
+### Google Chrome
+The first thing that you'll have to do is check your Google Chrome version.</p>
+To do so, follow these steps:
+![New Tab](README_images/newtab.jpg)
+![Setting Button](README_images/settingsbutton.jpg)
+![Setting Page](README_images/settingspage.jpg)
+![Version](README_images/version.jpg)
+"Is this important?". Yes sir, it is. Thing can get really messed up later if you don't have a webdriver's version that corresponds to your browser's version.</p>
+Next step is going to this website [`https://chromedriver.chromium.org/downloads`](https://chromedriver.chromium.org/downloads) (Go ahead! Click it!) and look for the WebDriver's version you should download. In my case, it'll be the [` ChromeDriver 81.0.4044.20`](https://chromedriver.storage.googleapis.com/index.html?path=81.0.4044.20/).</p>
+And now download the zip file:
+![Chrome Driver's download options](README_images/download_options.png)
+Now, the steps are pretty much the same we followed to config geckodriver.</p>
+* Extract the file;
+* Use the command: `mv chromedriver.exe /usr/local/bin` or `mv chromedriver.exe /usr/bin`.
 # How Does It Work?
 The program opens the contact file, which in this case is named as `contacts.vcf`, and appends all its lines to a temporary list - `temp_list`.</p>
 Once the contacts file is a *vcf* file, its content format is something like this:
@@ -97,7 +125,7 @@ There is no `FN:` or `FN;`, but there is a `FN_GROUP:`. That tag is for group na
 This bot still needs plenty of testing and improvement, and I am oppened to some constructive criticism for sure, and willing to make some modifications to the code based you the community suggestions.</p>
 
 This rep has a file named as `contacts.vcf` with an example of the format that the contacts/groups will follow.
-One little note here: this bot was built to work on Mozilla Firefox, so it'll definitely not work on Google Chrome, or Microsoft Edge, etc. At least for now. Perhaps I can add the adpat version of this bot to those two browsers.</p>
+One little note here: this bot was built to work on Mozilla Firefox (`bot.py` file) and Google Chrome (`bot_chrome.py`), so it'll definitely not work on different browsers, etc. At least for now.</p>
 
 
 ## Bugs
