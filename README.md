@@ -1,9 +1,9 @@
 # WhatsApp Bot
 This is, basically, a very simple bot made to send messages automatically to a list of contacts via WhatsApp Web.</p>
-The list of contacts is read from a `.vcf` format file.</p>
+The list of contacts is read from a `.vcf` file.</p>
 This project was built using:
 * python 3.6
-* Selenium
+* Selenium</p>
 Running the bot it's just as simples as using one of the following commands:
 * `py.exe bot.py`
 * `py bot.py`
@@ -13,10 +13,10 @@ Running the bot it's just as simples as using one of the following commands:
 After running the code, you'll see this screen:
 ![Whatsapp Web Login Screen](/README_images/whatsappweb.png)
 Since the moment the code starts running, the program will wait for 15 seconds before star executing comands. So, if it is taking you longer then that to log in WhatsApp Web, try increasing the waiting time.</p>
-When you're in, the bot will start tipping the names where the red arrow is pointing at:
+When you're in, the bot will start tipping the names where the red arrow is pointing at:</p>
 ![Tipping Box](README_images/whatsapp.jpg)
 ![alt](README_images/writen.jpg)
-And then types the message and sends it:
+And then types the message and sends it:</p>
 ![alt](README_images/typing.jpg)
 ![alt](README_images/sent.jpg)
 And then it repeats the process untill the end of the contact list.</p>
@@ -38,14 +38,14 @@ Now, on the command line, type: `mv geckodriver.exe /usr/local/bin`, and in case
 Now you're all set.
 ### Google Chrome
 The first thing that you'll have to do is check your Google Chrome version.</p>
-To do so, follow these steps:
+To do so, follow these steps:</p>
 ![New Tab](README_images/newtab.jpg)
 ![Setting Button](README_images/settingsbutton.jpg)
 ![Setting Page](README_images/settingspage.jpg)
 ![Version](README_images/version.jpg)
 "Is this important?". Yes sir, it is. Thing can get really messed up later if you don't have a webdriver's version that corresponds to your browser's version.</p>
 Next step is going to this website [`https://chromedriver.chromium.org/downloads`](https://chromedriver.chromium.org/downloads) (Go ahead! Click it!) and look for the WebDriver's version you should download. In my case, it'll be the [` ChromeDriver 81.0.4044.20`](https://chromedriver.storage.googleapis.com/index.html?path=81.0.4044.20/).</p>
-And now download the zip file:
+And now download the zip file:</p>
 ![Chrome Driver's download options](README_images/download_options.png)
 Now, the steps are pretty much the same we followed to config geckodriver.</p>
 * Extract the file;
